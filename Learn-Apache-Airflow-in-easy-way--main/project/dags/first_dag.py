@@ -9,7 +9,8 @@ dag = DAG(
 )
 task1 = BashOperator(
     task_id = 't1',
-    bash_command = 'echo hello && exit 1', ##upstream
+    bash_command='{{var.value.keyVariable}}',
+    ##bash_command = 'echo hello && exit 1', ##upstream
     dag = dag,  
     retries = 3
 )
